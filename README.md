@@ -12,7 +12,7 @@ ssh -X -p 2020 vagrant@127.0.0.1 qgis
 oder mit _x2go_ (xfc4). 
 
 - Passwort `vagrant`.
-- Host-IP (für DB-Connection): `192.168.56.1`
+- Host-IP (für DB-Connection und Geoserver): `192.168.56.1`
 
 
 ## QGIS 3.16
@@ -27,7 +27,7 @@ ssh -X -p 2021 vagrant@127.0.0.1 qgis
 oder mit _x2go_ (xfc4). 
 
 - Passwort `vagrant`.
-- Host-IP (für DB-Connection): `192.168.56.1`
+- Host-IP (für DB-Connection und Geoserver): `192.168.56.1`
 
 ## Datenbank und Geoserver
 
