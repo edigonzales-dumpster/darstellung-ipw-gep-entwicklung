@@ -60,6 +60,37 @@ Credentials: `admin / geoserver`
 
 ### Leere Tabellen und Schema anlegen (lokal)
 
+Der Einfachheit halber ohne Basket- und Datasetcolumn. Dafür einmal mit Fremdschlüsseln und einmal ohne (und mit `--sqlEnableNull`).
+
+```
+java -jar /Users/stefan/apps/ili2pg-4.4.2/ili2pg-4.4.2.jar \
+--dbschema vsadssmini_fk --models VSADSSMINI_2020_LV95 --modeldir "https://vsa.ch/models;http://models.geo.admin.ch" \
+--defaultSrsCode 2056 --createGeomIdx --createFk --createFkIdx --createUnique --createEnumTabs --beautifyEnumDispName --createNumChecks --nameByTopic --strokeArcs \
+--createscript vsadssmini_fk.sql
 ```
 
+```
+java -jar /Users/stefan/apps/ili2pg-4.4.2/ili2pg-4.4.2.jar \
+--dbschema vsadssmini --models VSADSSMINI_2020_LV95 --modeldir "https://vsa.ch/models;http://models.geo.admin.ch" \
+--defaultSrsCode 2056 --createGeomIdx --sqlEnableNull --createUnique --createEnumTabs --beautifyEnumDispName --createNumChecks --nameByTopic --strokeArcs \
+--createscript vsadssmini.sql
+```
+
+Siehe https://github.com/claeis/ili2db/issues/353. Es wird auf `--createMetaInfo` verzichtet.
+
+- 'Abwasserentsorgung bei Regenwetter'
+- 'Regenüberlauf'
+- 'Erhaltung von Kanalisationen'
+- 'Abwasserbewirtschaftung bei Regenwetter'
+- ...?
+
+
+### Daten exportieren
+```
+java -jar /Users/stefan/apps/ili2pg-4.4.2/ili2pg-4.4.2.jar \
+--dbhost localhost --dbport 54321 --dbdatabase edit --dbusr admin --dbpwd admin \
+--dbschema vsadssmini --models VSADSSMINI_2020_LV95 --modeldir "https://vsa.ch/models;http://models.geo.admin.ch" \
+--defaultSrsCode 2056 --createGeomIdx --sqlEnableNull --createUnique --createEnumTabs --beautifyEnumDispName --createNumChecks --nameByTopic --strokeArcs \
+--disableValidation \
+--export fubar.xtf
 ```
