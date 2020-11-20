@@ -19,7 +19,7 @@ oder mit _x2go_ (xfc4).
 Für das Editieren von Daten.
 
 ```
-cd vagrant/qgis218
+cd vagrant/qgis316
 vagrant up
 ssh -X -p 2021 vagrant@127.0.0.1 qgis
 ```
@@ -94,3 +94,7 @@ java -jar /Users/stefan/apps/ili2pg-4.4.2/ili2pg-4.4.2.jar \
 --disableValidation \
 --export fubar.xtf
 ```
+
+## Fragestellungen
+
+### Fliessrichtung
