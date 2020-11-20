@@ -98,3 +98,8 @@ java -jar /Users/stefan/apps/ili2pg-4.4.2/ili2pg-4.4.2.jar \
 ## Fragestellungen
 
 ### Fliessrichtung
+Einstellungen in QGIS:
+- Placement: Above line und Below line
+- Rendering: Show up side down label = always
+
+Ist das nun Zufall, dass es stimmt?
