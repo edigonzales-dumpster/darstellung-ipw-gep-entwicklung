@@ -15,27 +15,27 @@ services:
       PG_ROOT_PASSWORD: secret
     ports:
       - "54321:5432"
-    volumes:
-      - ./development_dbs/setup.sql:/pgconf/setup.sql
-      - sshd_edit:/sshd
-      - pgconf_edit:/pgconf
-      - pgdata_edit:/pgdata
-      - pgwal_edit:/pgwal
-      - recover_edit:/recover
-      - backrestrepo_edit:/backrestrepo
+    # volumes:
+    #   - ./development_dbs/setup.sql:/pgconf/setup.sql
+    #   - sshd_edit:/sshd
+    #   - pgconf_edit:/pgconf
+    #   - pgdata_edit:/pgdata
+    #   - pgwal_edit:/pgwal
+    #   - recover_edit:/recover
+    #   - backrestrepo_edit:/backrestrepo
     hostname: primary-edit
-  geoserver:
-    depends_on:
-     - edit-db
-    image: sogis/geoserver:2.18.0
-    ports:
-      - "8080:8080"
-    volumes:
-      - ./geoserver/data_dir:/var/local/geoserver
-volumes:
-  sshd_edit:
-  pgconf_edit:
-  pgdata_edit:
-  pgwal_edit:
-  recover_edit:
-  backrestrepo_edit:
+  # geoserver:
+  #   depends_on:
+  #    - edit-db
+  #   image: sogis/geoserver:2.18.0
+  #   ports:
+  #     - "8080:8080"
+  #   volumes:
+  #     - ./geoserver/data_dir:/var/local/geoserver
+# volumes:
+#   sshd_edit:
+#   pgconf_edit:
+#   pgdata_edit:
+#   pgwal_edit:
+#   recover_edit:
+#   backrestrepo_edit:
